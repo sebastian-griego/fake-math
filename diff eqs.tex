@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Solving $f' = f$ Using Completely Rigorous Methods}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+We want to solve the differential equation:
+\[ f' = f \]
+
+First, rewrite this in terms of the integration operator:
+\[ f = \int f \]
+
+Subtract $\int f$ from both sides and factor out $f$:
+\[ f - \int f = 0 \quad\Longrightarrow\quad \left(1 - \int\right) f = 0 \]
+
+I'm not allowed to do this, but I'm going to do it anyway.
+\[ f = (1 - \int)^{-1} 0 \]
+
+Using the geometric series formula:
+\[ (1-x)^{-1} = 1 + x + x^2 + x^3 + \cdots \]
+
+We apply this to our integration operator:
+\[ f = \left(1 + \int + \int\int + \int\int\int + \cdots\right) 0 \]
+
+Evaluating term by term:
+\begin{align*}
+1 \cdot 0 &= 0 \\
+\int 0 &= C \\
+\int\int 0 &= Cx \\
+\int\int\int 0 &= C\frac{x^2}{2!} \\
+\int\int\int\int 0 &= C\frac{x^3}{3!} \\
+&\vdots
+\end{align*}
+
+Adding these up gives us:
+\[ f = 0 + C + Cx + C\frac{x^2}{2!} + C\frac{x^3}{3!} + \cdots \]
+
+This is exactly the Taylor series for $Ce^x$! Therefore:
+\[ f(x) = Ce^x \]
+
+No, this is not a rigorous proof. It is a fake proof that leads to the correct answer.
+
+\end{document}
